@@ -19,3 +19,5 @@ public class VersionController {
         return "Hello -> Development Branch Here";
     }
 }
+
+//http://devi-springboot-dev.eba-hzissitm.ap-south-1.elasticbeanstalk.com
