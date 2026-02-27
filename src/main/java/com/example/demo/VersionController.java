@@ -14,4 +14,8 @@ public class VersionController {
     public String getVersion() {
         return "Application Version: " + version;
     }
+    @GetMapping("/")
+    public String getHello(){
+        return "Hello -> Develop Branch Here";
+    }
 }
