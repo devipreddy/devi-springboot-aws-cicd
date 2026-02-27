@@ -1,43 +1,19 @@
 version: 0.2
 
-env:
-  variables:
-    APP_NAME: "devi-springboot"
-    JAR_FILE: "app.jar"
-
 phases:
   install:
     runtime-versions:
       java: corretto21
     commands:
       - echo Installing dependencies
-      - java -version
-      - mvn -version
-
-  pre_build:
-    commands:
-      - echo Running unit tests
-      - mvn clean verify
 
   build:
     commands:
-      - echo Building application
-      - mvn package -DskipTests
+      - echo Build started on `date`
+      - mvn clean package
       - echo Build completed on `date`
-
-  post_build:
-    commands:
-      - echo Preparing Elastic Beanstalk artifact
-      - cp target/*.jar $JAR_FILE
-      - echo "web: java -jar $JAR_FILE" > Procfile
-      - zip -r deployment.zip $JAR_FILE Procfile
-      - echo Artifact ready
 
 artifacts:
   files:
-    - deployment.zip
+    - target/*.jar
   discard-paths: yes
-
-cache:
-  paths:
-    - '/root/.m2/**/*'
