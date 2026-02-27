@@ -16,6 +16,6 @@ public class VersionController {
     }
     @GetMapping("/")
     public String getHello(){
-        return "Hello -> Develop Branch Here";
+        return "Hello -> Development Branch Here";
     }
 }
