@@ -14,7 +14,7 @@ public class VersionController {
     public String getVersion() {
         return "Application Version: " + version;
     }
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String getHello(){
         return "Hi, this is the new commit of Dev branch";
     }
