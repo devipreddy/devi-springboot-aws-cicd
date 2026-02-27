@@ -16,7 +16,7 @@ public class VersionController {
     }
     @GetMapping("/")
     public String getHello(){
-        return "Hello -> Development Branch Here";
+        return "Hi, this is the new commit of Dev branch";
     }
 }
 
